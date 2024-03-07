@@ -1,0 +1,43 @@
+{% extends 'Base/home.html' %}
+
+{% block content %}
+
+<br>
+<br>
+
+<div class="container">
+
+<p><h4>{{casco.titulo}}</h4></p>
+
+{% if casco.imagenProducto %}
+    <p><img src="{{casco.imagenProducto.url}}" alt=""></p>
+{% endif %}
+<p>Marca: {{casco.marca}}</p>
+<p>Modelo: {{casco.modelo}}</p>
+<p>Descripción: {{casco.descripcion}}</p>
+<p>year: {{casco.year}}</p>
+<p>Precio(US$): {{casco.precio}}</p>
+<p>Teléfono de Contacto: {{casco.telefonoContacto}}</p>
+<p>Email de Contacto: {{casco.emailContacto}}</p>
+
+</div>
+<br>
+<div class="container">
+    <h4>Comentarios...</h4>
+    <br>
+    <div class="container">
+    {% if not casco.comentarios.all %}
+        No han comentado este producto
+    {% else %}
+        {% for comentario in casco.comentarios.all %}
+        <p><strong>{{comentario.nombre}}</strong></p>
+        <p>{{comentario.mensaje}}</p>
+        <p><small>{{comentario.fechaComentario}}</small></p>
+        <hr>
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'comentario' casco.pk %}">Agrega un Comentario</a>
+    </div>
+</div>
+<br>
+{% endblock %}

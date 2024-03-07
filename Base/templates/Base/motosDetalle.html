@@ -1,0 +1,42 @@
+{% extends 'Base/home.html' %}
+
+{% block content %}
+
+<br>
+<br>
+
+<div class="container">
+
+<p><h4>{{motos.titulo}}</h4></p>
+{% if motos.imagenProducto %}
+    <p><img src="{{motos.imagenProducto.url}}" alt=""></p>
+{% endif %}
+<p>Marca: {{motos.marca}}</p>
+<p>Modelo: {{motos.modelo}}</p>
+<p>Descripción: {{motos.descripcion}}</p>
+<p>year: {{motos.year}}</p>
+<p>Precio(US$): {{motos.precio}}</p>
+<p>Teléfono de Contacto: {{motos.telefonoContacto}}</p>
+<p>Email de Contacto: {{motos.emailContacto}}</p>
+
+</div>
+<br>
+<div class="container">
+    <h4>Comentarios...</h4>
+    <br>
+    <div class="container">
+    {% if not motos.comentarios.all %}
+        No han comentado este producto
+    {% else %}
+        {% for comentario in motos.comentarios.all %}
+        <p><strong>{{comentario.nombre}}</strong></p>
+        <p>{{comentario.mensaje}}</p>
+        <p><small>{{comentario.fechaComentario}}</small></p>
+        <hr>
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'comentario' motos.pk %}">Agrega un Comentario</a>
+    </div>
+</div>
+<br>
+{% endblock %}

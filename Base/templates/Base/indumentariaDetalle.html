@@ -1,0 +1,42 @@
+{% extends 'Base/home.html' %}
+
+{% block content %}
+
+<br>
+<br>
+
+<div class="container">
+
+<p><h4>{{indumentaria.titulo}}</h4></p>
+{% if indumentaria.imagenProducto %}
+    <p><img src="{{indumentaria.imagenProducto.url}}" alt=""></p>
+{% endif %}
+<p>Marca: {{indumentaria.marca}}</p>
+<p>Modelo: {{indumentaria.modelo}}</p>
+<p>Descripción: {{indumentaria.descripcion}}</p>
+<p>year: {{indumentaria.year}}</p>
+<p>Precio(US$): {{indumentaria.precio}}</p>
+<p>Teléfono de Contacto: {{indumentaria.telefonoContacto}}</p>
+<p>Email de Contacto: {{indumentaria.emailContacto}}</p>
+
+</div>
+<br>
+<div class="container">
+    <h4>Comentarios...</h4>
+    <br>
+    <div class="container">
+    {% if not indumentaria.comentarios.all %}
+        No han comentado este producto
+    {% else %}
+        {% for comentario in indumentaria.comentarios.all %}
+        <p><strong>{{comentario.nombre}}</strong></p>
+        <p>{{comentario.mensaje}}</p>
+        <p><small>{{comentario.fechaComentario}}</small></p>
+        <hr>
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'comentario' indumentaria.pk %}">Agrega un Comentario</a>
+    </div>
+</div>
+<br>
+{% endblock %}

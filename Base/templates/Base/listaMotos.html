@@ -1,0 +1,40 @@
+{% extends 'Base/home.html' %}
+
+{% block content %}
+
+<br>
+<br>
+
+
+
+
+
+<div class="container text-center">
+    <h1>Motos</h1>
+</div>
+
+<br>
+
+<div class="container text-center">
+    <div class="row">
+            {% for motos in motos %}
+            <div class="col-sm-6 align-items-center">
+                <div class="card-body">
+                <img src="{{motos.imagenProducto.url}}" class="" width="100px">
+                {{motos.titulo}}
+                <a href="{% url 'motos' motos.id %}"><i class="bi bi-eye"></i></a>
+                {% if user.id == motos.usuario.id %}
+                <a href="{% url 'motos_editar' motos.id %}"><i class="bi bi-pencil-fill"></i></a>
+                <a href="{% url 'motos_eliminar' motos.id %}"><i class="bi bi-trash text-danger"></i></a>
+                <br>
+                <br>
+                <br>
+                <br>
+                {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

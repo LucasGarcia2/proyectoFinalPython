@@ -1,0 +1,42 @@
+{% extends 'Base/home.html' %}
+
+{% block content %}
+
+<br>
+<br>
+
+<div class="container">
+
+<p><h4>{{accesorios.titulo}}</h4></p>
+{% if accesorios.imagenProducto %}
+    <p><img src="{{accesorios.imagenProducto.url}}" alt=""></p>
+{% endif %}
+<p>Marca: {{accesorios.marca}}</p>
+<p>Modelo: {{accesorios.modelo}}</p>
+<p>Descripción: {{accesorios.descripcion}}</p>
+<p>year: {{accesorios.year}}</p>
+<p>Precio(US$): {{accesorios.precio}}</p>
+<p>Teléfono de Contacto: {{accesorios.telefonoContacto}}</p>
+<p>Email de Contacto: {{accesorios.emailContacto}}</p>
+
+</div>
+<br>
+<div class="container">
+    <h4>Comentarios...</h4>
+    <br>
+    <div class="container">
+    {% if not accesorios.comentarios.all %}
+        No han comentado este producto
+    {% else %}
+        {% for comentario in accesorios.comentarios.all %}
+        <p><strong>{{comentario.nombre}}</strong></p>
+        <p>{{comentario.mensaje}}</p>
+        <p><small>{{comentario.fechaComentario}}</small></p>
+        <hr>
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'comentario' accesorios.pk %}">Agrega un Comentario</a>
+    </div>
+</div>
+
+{% endblock %}
