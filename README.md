@@ -19,20 +19,24 @@ Python 3.10.4: Lenguaje de programación utilizado.
 Django 4.0: Framework de desarrollo web.
 
 ### Instalación
-1)Clonar este repositorio.
+1) Clonar este repositorio.
 
-2)Crear y activar un entorno virtual:
+2) Crear y activar un entorno virtual:
+
 python3 -m venv env
 
 source env/bin/activate
 
-3)Instalar las dependencias:
+3) Instalar las dependencias:
+
 pip install -r requirements.txt
 
-4)Aplicar las migraciones de la base de datos:
+4) Aplicar las migraciones de la base de datos:
+
 python manage.py migrate
 
-5)Iniciar el servidor de desarrollo:
+5) Iniciar el servidor de desarrollo:
+
 python manage.py runserver
 
 ## Autor
