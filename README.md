@@ -48,6 +48,8 @@ Contacto: lucasgarcia424@gmail.com
 
 Perfil de Github: https://github.com/LucasGarcia2
 
+Perfil de LinkedIn: https://www.linkedin.com/in/lucas-garcia-321473195/
+
 ## Contribuciones
 Siéntete libre de contribuir al proyecto. Cualquier mejora es bienvenida. Por favor, sigue las pautas de contribución.
 
