@@ -6,35 +6,53 @@ Este proyecto es un sistema de comercio electrónico desarrollado como proyecto 
 ## Tecnologías Utilizadas
 ### Front-End
 HTML 5: Estructura del sitio web.
+
 CSS 3: Estilos y diseño.
+
 Javascript ES6: Funcionalidades interactivas.
+
 Bootstrap 5.2: Framework de CSS para diseño responsivo.
+
 ### Back-End
 Python 3.10.4: Lenguaje de programación utilizado.
+
 Django 4.0: Framework de desarrollo web.
+
 ### Instalación
 Clonar este repositorio.
+
 Crear y activar un entorno virtual:
+
 bash
+
 Copy code
+
 python3 -m venv env
+
 source env/bin/activate
-Instalar las dependencias:
+
+### Instalar las dependencias:
 Copy code
+
 pip install -r requirements.txt
+
 Aplicar las migraciones de la base de datos:
+
 Copy code
+
 python manage.py migrate
-Iniciar el servidor de desarrollo:
+
+### Iniciar el servidor de desarrollo:
 Copy code
 python manage.py runserver
-Capturas de Pantalla
-Inserta capturas de pantalla del proyecto en acción para dar una vista previa visual.
 
 ## Autor
 Nombre: Lucas García
+
 Comisión del Curso: 56070
+
 Contacto: lucasgarcia424@gmail.com
+
 Perfil de Github: https://github.com/LucasGarcia2
 
 ## Contribuciones
@@ -45,4 +63,5 @@ MIT.
 
 ## Agradecimientos
 -Profesor del curso: Leandro Esteban Rositto
+
 -Tutor del curso: Pedro Vernengo
